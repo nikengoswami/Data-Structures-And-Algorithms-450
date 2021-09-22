@@ -11,28 +11,53 @@
 
 
 // ----------------------------------------------------------------------------------------------------------------------- //
-#include<bits/stdc++.h>
-using namespace std;
-
-void sort012(int a[], int n)
+class Solution
 {
-    int low = 0, high = n - 1, mid = 0;
-    while (mid <= high) {
-        if (a[mid] == 0) swap(a[mid++], a[low++]);
-        else if (a[mid] == 1) mid++;
-        else swap(a[mid], a[high--]);
-        /* why not mid++ ?
-            ans: let's assume the one which with we are swapping is also 2 then after swapping in mid pos it will still be 2
-                hence solution is don't increment the mid until and unless it is equal to 1.
-        */
-    }
-    for (int i = 0;i < n;i++) {
-        cout << a[i] << " ";
+    public:
+    void sort012(int a[], int n){
+    int l=0, m=0, h=n - 1;
+    
+    while(m<=h){
+        
+        switch(a[m]){
+            case 0:
+                swap(a[l++], a[m++]);
+                break;
+            case 1:
+                m++;
+                break;
+            case 2:
+                swap(a[h--], a[m]);
+                break;
+        }
     }
 }
 
+    
+};
+
+// { Driver Code Starts.
 int main() {
-    int n = 5;
-    int arr[] = { 0, 2, 1, 2, 0 };
-    sort012(arr, n);
+
+    int t;
+    cin >> t;
+
+    while(t--){
+        int n;
+        cin >>n;
+        int a[n];
+        for(int i=0;i<n;i++){
+            cin >> a[i];
+        }
+
+        Solution ob;
+        ob.sort012(a, n);
+
+        for(int i=0;i<n;i++){
+            cout << a[i]  << " ";
+        }
+
+        cout << endl; 
+    }
+    return 0;
 }

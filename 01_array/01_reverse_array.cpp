@@ -1,7 +1,7 @@
 /*
     link: https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/
 
-    note: array is pass by reference so no need to worry while changing value it will change in original array.
+ 
 */
 
 

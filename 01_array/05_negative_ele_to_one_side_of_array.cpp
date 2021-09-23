@@ -1,28 +1,21 @@
 /*
     link: https://www.geeksforgeeks.org/move-negative-numbers-beginning-positive-end-constant-extra-space/
 
-    variation: 2-pointer
 */
 
 
 // ----------------------------------------------------------------------------------------------------------------------- //
-void arrange(int a[], int n) {
-    int negi = 0;
-    int posi = n - 1;
-
-    while (negi <= posi) {
-        if (a[negi] < 0 && a[posi] < 0) {
-            negi++;
-        }
-        else if (a[negi] > 0 && a[posi] < 0) {
-            swap(a[negi], a[pos]);
-            negi++;
-            pos--;
-        }
-        else if (a[negi] > 0 && a[posi] > 0) posi--;
-        else {
-            low++;
-            high--;
+#include <bits/stdc++.h>
+using namespace std;
+ 
+void arrange(int arr[], int n)
+{
+    int j = 0;
+    for (int i = 0; i < n; i++) {
+        if (arr[i] < 0) {
+            if (i != j)
+                swap(arr[i], arr[j]);
+            j++;
         }
     }
 }

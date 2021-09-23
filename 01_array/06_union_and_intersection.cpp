@@ -34,7 +34,7 @@ class Solution{
     int doUnion(int a[], int n, int b[], int m)  {
           int gtr = n<m?m:n;
         set<int> s;
-       for(int i = 0;i<big;i++) {
+       for(int i = 0;i<gtr;i++) {
            if (i<n) {
            s.insert(a[i]);
            }

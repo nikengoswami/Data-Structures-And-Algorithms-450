@@ -6,14 +6,29 @@
 
 
 // ----------------------------------------------------------------------------------------------------------------------- //
-int maxSubarraySum(int arr[], int n) {
-    int dp[n];
-
-    dp[0] = max(0, arr[0]);
-    int omax = dp[0];
-    for (int i = 1;i < n;i++) {
-        dp[i] = max(dp[i - 1] + arr[i], arr[i]);
-        omax = max(dp[i], omax);
+ long long maxSubarraySum(int arr[], int n){
+        
+        // Your code here
+        long long min = INT_MIN;
+       long long max = min;
+       
+       int i;
+       long long sum = 0;
+       
+       for(i=0; i<n; i++)
+       {
+           sum = sum + arr[i];
+           
+           if(sum >= max){
+               max = sum;
+               
+           }
+               
+           if(sum < 0){
+               sum = 0;
+           }
+       }
+       
+       return max;
     }
-    return omax;
-}
+};

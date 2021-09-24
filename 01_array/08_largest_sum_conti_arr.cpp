@@ -12,18 +12,16 @@
         long long min = INT_MIN;
        long long max = min;
        
-       int i;
+       
        long long sum = 0;
        
-       for(i=0; i<n; i++)
+       for(int i=0; i<n; i++)
        {
            sum = sum + arr[i];
            
            if(sum >= max){
                max = sum;
-               
-           }
-               
+           }   
            if(sum < 0){
                sum = 0;
            }

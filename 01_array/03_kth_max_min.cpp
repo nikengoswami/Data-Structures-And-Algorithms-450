@@ -4,16 +4,7 @@
 
 
 */
-
-
-// { Driver Code Starts
-//Initial Template for C
-
 #include<stdio.h>
-
- // } Driver Code Ends
-//User function Template for C
-
 #include<algorithm>
 class Solution{
    public:
@@ -33,7 +24,7 @@ class Solution{
 };
 
    }
-// { Driver Code Starts.
+
  
 int main()
 {
@@ -54,4 +45,4 @@ int main()
         printf("\n");
     }
     return 0;
-}  // } Driver Code Ends
+}  

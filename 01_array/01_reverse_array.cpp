@@ -28,14 +28,8 @@ int main() {
 	
 }
 
-// } Driver Code Ends
-
-
-//User function Template for C++
-
 string reverseWord(string str){
-    
-  //Your code here
+
   string res="";
   int slen=str.length()-1;
   int i=0;

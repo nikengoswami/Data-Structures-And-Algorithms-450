@@ -4,37 +4,29 @@
 
 
 // ----------------------------------------------------------------------------------------------------------------------- //
-// method 1
 class Solution {
 public:
-
-
-	int isPlaindrome(string s)
-	{
-		// Your code goes here
-		int len = s.size();
-		for (int i = 0;i < len / 2;i++) {
-			if (s[i] != s[len - i - 1]) return 0;
-		}
-		return 1;
-	}
-
-};
-
-
-
-// ----------------------------------------------------------------------------------------------------------------------- //
-// method 2
-class Solution {
-public:
-
-
-	int isPlaindrome(string s)
-	{
-		// Your code goes here
-		string temp = s;
-		reverse(temp.begin(), temp.end());
-		return (temp == s);
-	}
-
+    bool isPalindrome(string s) {
+        string w="";
+        int k=0;
+         for( int i=0;i<s.size();i++ ){
+            if( isalnum(s[i]) ){
+                w+=tolower(s[i]);
+                k++;
+            }
+        }
+        
+        if(k==1)
+            return 1;
+        
+                int j=0;
+                k--;
+        while(j<k){
+            if(w[j]!=w[k]){
+                return false;
+            }  
+            k--,j++;  
+        }
+        return true;
+    }
 };
